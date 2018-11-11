@@ -6,6 +6,7 @@ public class TargetToTouch : MonoBehaviour {
 
     public InputController input;
     public LayerMask Ground;
+    public float rayDist=100f;
     public Camera cam;
 
     private void Start() {
@@ -15,7 +16,7 @@ public class TargetToTouch : MonoBehaviour {
         Ray ray = cam.ScreenPointToRay(input.touchPosition);
         RaycastHit hitInfo;
 
-        if (Physics.Raycast(ray, out hitInfo, 100f, Ground))
+        if (Physics.Raycast(ray, out hitInfo, rayDist, Ground))
             transform.position = hitInfo.point;
     }
 }
