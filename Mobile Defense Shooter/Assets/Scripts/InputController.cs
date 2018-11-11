@@ -12,7 +12,9 @@ public class InputController: MonoBehaviour{
 
     private void Update() {
 
-        
+
+        fireKey = Input.GetKeyDown(KeyCode.Space);
+
         if (Input.touchCount > 0) {
             touchPosition = Input.touches[0].position;
             if (Input.touches[0].phase == TouchPhase.Began) {       

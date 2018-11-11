@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 48312399}
   - component: {fileID: 48312398}
   m_Layer: 9
-  m_Name: Plane
+  m_Name: LevelGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -278,7 +278,7 @@ GameObject:
   - component: {fileID: 408868293}
   - component: {fileID: 408868292}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: rightCannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -293,7 +293,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.436, y: 0, z: 0.33}
   m_LocalScale: {x: 0.23022999, y: 0.23022999, z: 1.05752}
-  m_Children: []
+  m_Children:
+  - {fileID: 447632543}
   m_Father: {fileID: 1344111799}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -351,6 +352,34 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 408868290}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &447632542
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 447632543}
+  m_Layer: 0
+  m_Name: rightRelease
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &447632543
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 447632542}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.573}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 408868291}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &534669902
 GameObject:
   m_ObjectHideFlags: 0
@@ -445,7 +474,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &564873633
 Transform:
   m_ObjectHideFlags: 0
@@ -613,7 +642,7 @@ GameObject:
   - component: {fileID: 1519606031}
   - component: {fileID: 1519606030}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: leftCannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -628,7 +657,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.38, y: 0, z: 0.33}
   m_LocalScale: {x: 0.23022796, y: 0.23022796, z: 1.057517}
-  m_Children: []
+  m_Children:
+  - {fileID: 2066454524}
   m_Father: {fileID: 1344111799}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -695,6 +725,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1957612108}
   - component: {fileID: 1957612109}
+  - component: {fileID: 1957612107}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -702,6 +733,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1957612107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1957612106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9913c69a6a2a3d438b562d4190fa6ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultWeapon: {fileID: 11400000, guid: d0d2ac07d5fa06a4592664720919b6ba, type: 2}
+  equipped: {fileID: 0}
+  canFire: 0
+  weaponFireRate: 0
+  weaponBulletPrefab: {fileID: 0}
+  cannonLeft: {fileID: 2066454524}
+  cannonRight: {fileID: 447632543}
 --- !u!4 &1957612108
 Transform:
   m_ObjectHideFlags: 0
@@ -776,3 +825,31 @@ MonoBehaviour:
     m_Bits: 512
   rayDist: 100
   cam: {fileID: 534669904}
+--- !u!1 &2066454523
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2066454524}
+  m_Layer: 0
+  m_Name: leftRelease
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2066454524
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2066454523}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.574}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1519606029}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
