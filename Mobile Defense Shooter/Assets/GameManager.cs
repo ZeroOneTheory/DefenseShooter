@@ -12,7 +12,7 @@ public class GameManager:MonoBehaviour {
                 m_Instance = new GameManager {
                     gameObject = new GameObject("_gameManager")
                 };
-                m_Instance.gameObject.AddComponent<InputController>();
+                
                 // Add components to Game manager using m_instance.gameObject.AddComponent<DESIRED COMPONENT>();
 
             }
@@ -20,16 +20,7 @@ public class GameManager:MonoBehaviour {
         }
     }
 
-    private static InputController m_InputController;
-    public static InputController InputController {
-        get{
-            if(m_InputController == null) {
-                m_InputController= m_Instance.gameObject.GetComponent<InputController>();
-            }
-            return m_InputController;
-        }
-        
-    }
+
 
 
 }
