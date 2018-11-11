@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager {
+public class GameManager:MonoBehaviour {
 
     private GameObject gameObject;
     private static GameManager m_Instance;
@@ -30,5 +30,6 @@ public class GameManager {
         }
         
     }
+
 
 }
