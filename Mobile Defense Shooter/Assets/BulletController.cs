@@ -7,8 +7,8 @@ public class BulletController : MonoBehaviour {
     public float bulletSpeed=10;
 
 	// Use this for initialization
-	void Start () {
-        Destroy(this, 20);
+	void Awake () {
+        Destroy(this, 5);
 	}
 	
 	// Update is called once per frame
