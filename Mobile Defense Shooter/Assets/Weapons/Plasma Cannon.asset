@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Name: Plasma Cannon
   m_EditorClassIdentifier: 
   Name: Plasma Cannon
-  fireRate: 0.1
+  fireRate: 0.03
   clipSize: 100
   bullet: {fileID: 4621647726464136, guid: f5531c8a26d1d81439be9f768e57e083, type: 2}

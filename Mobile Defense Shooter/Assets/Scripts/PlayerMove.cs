@@ -28,7 +28,7 @@ public class PlayerMove : MonoBehaviour {
         Vector3 direction = lookTarget.position - transform.position; 
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x,0f, direction.z));
         Debug.Log(lookRotation);
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation,Time.deltaTime *rotationSpeed);
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, rotationSpeed* Time.deltaTime);
     }
     
 }
