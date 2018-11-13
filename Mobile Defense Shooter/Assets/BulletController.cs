@@ -8,7 +8,8 @@ public class BulletController : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
-        Destroy(this, 5);
+        
+        Destroy(this.gameObject,3);
 	}
 	
 	// Update is called once per frame
