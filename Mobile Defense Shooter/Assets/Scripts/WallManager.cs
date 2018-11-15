@@ -10,6 +10,7 @@ public class WallManager : MonoBehaviour {
 
     public int wallSegmentsPerFace =5;
     public int wallFaces = 4;
+    public float spacing=5;
 
     public void Update() {
         if (Input.GetKeyDown(KeyCode.Space)) {
@@ -30,11 +31,12 @@ public class WallManager : MonoBehaviour {
             for(int s=0; s<wallSegmentsPerFace; s++) {
                 GameObject segment = Instantiate(wallSegmentPrefab);
                 segment.transform.SetParent(wall.transform);
-                Vector3 offset = new Vector3(segment.transform.position.x, segment.transform.position.y, segment.transform.position.z + s);
+                Vector3 offset = new Vector3(segment.transform.position.x, segment.transform.position.y, segment.transform.position.z+(spacing*s));
                 segment.transform.position = offset;
             }
-            Vector3 wallOffset = new Vector3(wall.transform.position.x, wall.transform.position.y, wall.transform.position.z + f);
+            Vector3 wallOffset = new Vector3(wall.transform.position.x, wall.transform.position.y, wall.transform.position.z + (f));
             wall.transform.position = wallOffset;
+            wall.transform.Rotate(new Vector3(0, 90 * f, 0));
         }
     
     }
