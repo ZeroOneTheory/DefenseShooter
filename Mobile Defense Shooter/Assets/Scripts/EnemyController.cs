@@ -21,6 +21,7 @@ public class EnemyController : MonoBehaviour {
     // Use this for initialization
     void Start () {
         agent = GetComponent<NavMeshAgent>();
+        wallManager = FindObjectOfType<WallManager>();
         target = wallManager.GetNewDestinationTransform();
         agent.SetDestination(target.position);
         attkTarget = target.GetComponent<SegmentController>();
@@ -35,10 +36,10 @@ public class EnemyController : MonoBehaviour {
     }
 
 
-    private void OnCollisionEnter(Collision collision) {
-        if (collision.gameObject.tag == "Bullet") {
-            Debug.Log("hitting" + collision.gameObject.name);
-            Destroy(collision.gameObject);
+    private void OnTriggerEnter(Collider other) {
+        if (other.gameObject.tag == "Bullet") {
+            Debug.Log("hitting" + other.gameObject.name);
+            Destroy(other.gameObject);
             Destroy(this.gameObject);
         }
     }
