@@ -1,21 +1,26 @@
 fileFormatVersion: 2
-guid: c3f5f1166b00fb044abf4c719c3998d3
+guid: 47fba4fe875c6094aa66cdcb6d9d5045
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: BASE
-    2100002: APENDIGE
-    2100004: EYES
+    2100000: BOOTS
+    2100002: HAIR
+    2100004: SKIN
+    2100006: COAT
+    2100008: WEAPON
+    2100010: MONICOLE
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Flea
+    4300000: Doc
+    7400000: Default Take
+    9500000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 1
-    materialName: 0
-    materialSearch: 1
+    materialName: 1
+    materialSearch: 0
     materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
@@ -63,7 +68,7 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
     previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -87,7 +92,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

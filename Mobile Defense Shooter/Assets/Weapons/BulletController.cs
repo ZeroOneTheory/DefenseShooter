@@ -17,4 +17,12 @@ public class BulletController : MonoBehaviour {
         transform.position += transform.forward * bulletSpeed * Time.deltaTime;
 
     }
+
+    public void OnTriggerEnter(Collider other) {
+        if(other.gameObject.tag == "Enemy") {
+            Debug.Log("hitting" + other.name);
+            Destroy(other.gameObject);
+            Destroy(this.gameObject);
+        }
+    }
 }

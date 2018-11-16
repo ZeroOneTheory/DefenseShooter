@@ -5,15 +5,24 @@ using Unity.Collections;
 
 public class WallManager : MonoBehaviour {
 
-    [SerializeField]
-    private GameObject wallSegmentPrefab;
-    public List<GameObject> wallSegments = new List<GameObject>();
+    public GameObject wallCenter;
+
+    private int wallSegmentCount;
+    public List<Transform> wallFaceSegments = new List<Transform>();
+    public List<Transform> wallSegments = new List<Transform>();
 
     private void Awake() {
-        //int segmentCount = 
+        foreach(Transform wallFace in wallCenter.transform) {
+            wallFaceSegments.Add(wallFace.transform);
+            foreach (Transform segment in wallFace) {
+                wallSegments.Add(segment.transform);
+            }
+        }
     }
 
-    public void Update() {
+    public Transform GetNewDestinationTransform() {
+        int selection = Random.Range(0, wallSegments.Count - 1);
+        return wallSegments[selection].transform;
 
     }
 
