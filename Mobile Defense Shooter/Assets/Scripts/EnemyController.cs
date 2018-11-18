@@ -38,7 +38,7 @@ public class EnemyController : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag == "Bullet") {
-            Debug.Log("hitting" + other.gameObject.name);
+            GameManager.Instance.LevelManager.AddScore(10, true);
             Destroy(other.gameObject);
             Destroy(this.gameObject);
         }

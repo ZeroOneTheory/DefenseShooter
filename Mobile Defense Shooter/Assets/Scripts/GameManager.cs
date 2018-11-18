@@ -13,6 +13,7 @@ public class GameManager {
                 m_Instance = new GameManager();
                 m_Instance.gameObject = new GameObject("_gameManager");
                 m_Instance.gameObject.AddComponent<InputController>();
+                m_Instance.gameObject.AddComponent<LevelManager>();
 
             }
             return m_Instance;
@@ -26,6 +27,16 @@ public class GameManager {
                 m_InputController = gameObject.GetComponent<InputController>();
             }
             return m_InputController;
+        }
+    }
+
+    private LevelManager m_levelManager;
+    public LevelManager LevelManager {
+        get {
+            if (m_levelManager == null) {
+                m_levelManager = gameObject.GetComponent<LevelManager>();
+            }
+            return m_levelManager;
         }
     }
 

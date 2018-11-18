@@ -19,7 +19,8 @@ public class EnemySpawner : MonoBehaviour {
     }
 
     private void Update() {
-        spawnWait = Random.Range(spawnWaitMinMax.x, spawnWaitMinMax.y);
+       // spawnWait = Random.Range(spawnWaitMinMax.x, spawnWaitMinMax.y);
+        //spawnWait = 1;
     }
 
 
@@ -34,5 +35,8 @@ public class EnemySpawner : MonoBehaviour {
             yield return new WaitForSeconds(spawnWait);
 
         }
+    }
+    void DecreaseSpawnRate() {
+
     }
 }
