@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 112737b8502de904f8fe84e911e89634, type: 3}
+  m_Name: Bionic Flea
+  m_EditorClassIdentifier: 
+  EnemyName: Bionic Flea
+  EnemyModel: {fileID: 4300000, guid: 095f80e1a789e764283f16fe87d89050, type: 3}
+  EnemyUV: {fileID: 2800000, guid: c16401609a3410a4d9c0f2690cc109b5, type: 3}
+  attackRange: 0.05
+  attackStrength: 1
+  attackFrequency: 0.5
+  scoreForKill: 10

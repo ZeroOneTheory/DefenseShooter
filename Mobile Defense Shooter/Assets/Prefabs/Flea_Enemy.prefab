@@ -68,7 +68,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1440434858476376}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.17, y: 0, z: -23.54}
+  m_LocalPosition: {x: -2.17, y: 0, z: -34.4}
   m_LocalScale: {x: 2.0251095, y: 2.0251095, z: 2.0251095}
   m_Children:
   - {fileID: 4102495067162004}
@@ -163,12 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7c361e6369a70c4793bfc9865d8a6da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  wallManager: {fileID: 0}
-  attackRange: 5
-  attackStrength: 1
-  attackFrequency: 0.1
-  canAttack: 0
+  enemyTemplate: {fileID: 11400000, guid: 31cbc41296a49b24eb5e9786c4fa0fba, type: 2}
 --- !u!136 &136767025729278424
 CapsuleCollider:
   m_ObjectHideFlags: 1
