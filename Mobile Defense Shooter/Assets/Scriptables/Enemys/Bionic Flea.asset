@@ -14,7 +14,15 @@ MonoBehaviour:
   EnemyName: Bionic Flea
   EnemyModel: {fileID: 4300000, guid: 095f80e1a789e764283f16fe87d89050, type: 3}
   EnemyUV: {fileID: 2800000, guid: c16401609a3410a4d9c0f2690cc109b5, type: 3}
+  maxHealth: 3
+  moveType: 0
+  moveSpeed: 3
+  rotationSpeed: 2
+  idleMinMax: {x: 1, y: 5}
   attackRange: 0.05
   attackStrength: 1
   attackFrequency: 0.5
+  BulletPrefab: {fileID: 1485038617419594, guid: 60ec74467b8bccd47acf8074c521715c,
+    type: 2}
+  shootFrequency: 0
   scoreForKill: 10

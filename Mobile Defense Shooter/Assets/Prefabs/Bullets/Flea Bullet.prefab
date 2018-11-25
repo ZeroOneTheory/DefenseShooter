@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114791259456646132}
   - component: {fileID: 54913130529214638}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: Flea Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a684035afc92a904995749bb82c277bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 11400000, guid: 9fc44677d9d02c9458cdb3ffd77ff74e, type: 2}
+  bullet: {fileID: 11400000, guid: 49fdfb8aadb06e94095ecbde1e83473f, type: 2}
 --- !u!135 &135678906322638850
 SphereCollider:
   m_ObjectHideFlags: 1

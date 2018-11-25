@@ -1,66 +1,69 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
+
 
 public class EnemyController : MonoBehaviour {
 
-    private Transform target;
-    private WallManager wallManager;
-    private NavMeshAgent agent;
-    private SegmentController attkTarget;
-
+    public Transform target;
     public Enemy enemyTemplate;
-    // Refactor to Scriptable Object Later 
-    /*
-    public float attackRange=.05f;
-    public float attackStrength;
-    public float attackFrequency; 
-    public int scoreForKill;
-    */
+    public float enemyHealth;
 
     private bool canAttack;
     private float attackingRate;
 
-    // Use this for initialization
+    private bool canFire;
+    private float fireRate;
+
+
+    private void Awake() {
+        enemyHealth = enemyTemplate.maxHealth;
+    }
+
     void Start () {
-        agent = GetComponent<NavMeshAgent>();
-        wallManager = FindObjectOfType<WallManager>();
-        target = wallManager.GetNewDestinationTransform();
-        agent.SetDestination(target.position);
         gameObject.GetComponentInChildren<MeshFilter>().mesh = enemyTemplate.EnemyModel;
-        attkTarget = target.GetComponent<SegmentController>();
+        // Get Texture template 
+
 
     }
 
     private void Update() {
-        if(agent.remainingDistance <= enemyTemplate.attackRange) {
-            agent.isStopped = true;
-            AttackTarget(attkTarget);
-        }
+        // Movement behaviour script
+      
     }
 
 
-    private void OnTriggerEnter(Collider other) {
-        if (other.gameObject.tag == "Bullet") {
-            GameManager.Instance.LevelManager.AddScore(enemyTemplate.scoreForKill, true);
-            Destroy(other.gameObject);
-            Destroy(this.gameObject);
-        }
+    public void ShootAtTarget(Transform target) {
+        canFire = false;
+        if (Time.time < fireRate)
+            return;
+
+        fireRate = Time.time + enemyTemplate.shootFrequency;
+        //Shoot towards Player
+        canFire = true;
+    
     }
 
-    public void SetTarget(Transform newTarget) {
-        agent.SetDestination(newTarget.position);
-    }
-
-    public void AttackTarget(SegmentController target) {
+    public void MeleeAttack(Transform target) {
         canAttack = false;
         if (Time.time < attackingRate)
             return;
 
         attackingRate = Time.time + enemyTemplate.attackFrequency;
-        target.TakeDamage(enemyTemplate.attackStrength);
+        //Enforce Player take damage Method
         canAttack = true;
-    
+
+    }
+
+    public void TakeDamage(float dmgAmt) {
+        if((enemyHealth-dmgAmt <= 0)) {
+            Death();
+        }
+        enemyHealth -= dmgAmt;
+    }
+
+    public void Death() {
+        Destroy(this.gameObject);
+        //enemy death particle effect 
     }
 }
