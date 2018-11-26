@@ -20,7 +20,11 @@ public class BulletController : MonoBehaviour {
     }
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag == "Enemy" && this.gameObject.tag == "playerBullet") {
-           // Damage Enemy & Check for killshot
+            EnemyController enemy = other.GetComponent<EnemyController>();
+            if (enemy != null) {
+                enemy.TakeDamage(bullet.damageAmount);
+                Destroy(this.gameObject);
+            }
         }
 
         if (other.gameObject.tag == "player" && this.gameObject.tag == "Enemy") {

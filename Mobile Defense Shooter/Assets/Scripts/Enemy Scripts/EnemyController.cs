@@ -22,6 +22,7 @@ public class EnemyController : MonoBehaviour {
 
     void Start () {
         gameObject.GetComponentInChildren<MeshFilter>().mesh = enemyTemplate.EnemyModel;
+        target = GameObject.FindGameObjectWithTag("Player").transform;
         // Get Texture template 
 
 
@@ -63,7 +64,12 @@ public class EnemyController : MonoBehaviour {
     }
 
     public void Death() {
+        AddScore(enemyTemplate.scoreForKill);
         Destroy(this.gameObject);
         //enemy death particle effect 
+    }
+
+    public void AddScore(int score) {
+        GameManager.Instance.LevelManager.Score += score;
     }
 }

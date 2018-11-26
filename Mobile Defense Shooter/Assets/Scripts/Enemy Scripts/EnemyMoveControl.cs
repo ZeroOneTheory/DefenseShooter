@@ -7,21 +7,19 @@ public class EnemyMoveControl : MonoBehaviour {
 
     public Enemy enemy;
     public Rigidbody rb;
+    public Transform target;
 
     private Vector3 direction;
     private Quaternion lookRotation;
-
-    public bool canMove=false;
-    private Transform target;
+    private bool canMove=false;
     private float moveRate;
 
 
     private void Start() {
         enemy = GetComponentInParent<EnemyController>().enemyTemplate;
-        target = GetComponentInParent<EnemyController>().target;
         rb = GetComponent<Rigidbody>();
+        target = GameObject.FindGameObjectWithTag("Player").transform;
 
-        
     }
 
     public void Update() {
