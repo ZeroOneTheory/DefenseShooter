@@ -15,4 +15,4 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1485038617419594, guid: f5531c8a26d1d81439be9f768e57e083,
     type: 2}
   damageAmount: 1
-  bulletSpeed: 15
+  bulletSpeed: 100
