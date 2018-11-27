@@ -61,7 +61,9 @@ public class WaveSpawner : MonoBehaviour {
                 { 
                     Debug.Log("Spawning " + waves[a].enemys[b].groupName);
                     Vector3 spawnPoint = new Vector3(waves[a].enemys[b].spawnPoint.position.x+Random.Range(1, spawnSpread), 1f, waves[a].enemys[b].spawnPoint.position.z + Random.Range(1, spawnSpread));
-                    Instantiate(waves[a].enemys[b].enemy,spawnPoint,Quaternion.identity);
+                    GameObject enemy = Instantiate(waves[a].enemys[b].enemy, spawnPoint, Quaternion.identity);
+                    enemy.transform.SetParent(this.transform);
+
                     yield return new WaitForSeconds(1f / wave.spawnRate);
                 }
                 Debug.Log("Spawning " + waves[a].waveName);

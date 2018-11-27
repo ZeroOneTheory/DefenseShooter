@@ -10,6 +10,7 @@ public class InputController: MonoBehaviour{
     public Vector2 touchPosition;
     public Vector2 swipeDelta;
 
+
     private void Update() {
 
 
@@ -37,4 +38,5 @@ public class InputController: MonoBehaviour{
         touchStart = swipeDelta = touchPosition = Vector2.zero;
         isDragging = false;
     }
+
 }

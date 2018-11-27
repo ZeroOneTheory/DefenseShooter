@@ -8,7 +8,12 @@ public class LevelManager : MonoBehaviour {
     public bool gameLost = false;
     public int Score;
     public int killCount;
+    public float dropFrequency;
     private Scene currentScene;
+
+    private void Awake() {
+        DontDestroyOnLoad(this);
+    }
 
     public void Start() {
         currentScene = SceneManager.GetActiveScene();

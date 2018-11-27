@@ -61,12 +61,15 @@ public class EnemyController : MonoBehaviour {
             Death();
         }
         enemyHealth -= dmgAmt;
+        // Add damage sound effect
+        // add impact particle effect
     }
 
     public void Death() {
         AddScore(enemyTemplate.scoreForKill);
         Destroy(this.gameObject);
         //enemy death particle effect 
+        // add enemy death sound effect
     }
 
     public void AddScore(int score) {

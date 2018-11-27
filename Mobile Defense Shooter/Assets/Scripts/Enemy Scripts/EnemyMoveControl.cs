@@ -52,6 +52,24 @@ public class EnemyMoveControl : MonoBehaviour {
             rb.AddForce(direction.normalized * enemy.moveSpeed);
             yield return new WaitForSeconds(enemy.idleMinMax.y);
         }
+        if(moveType == AIMoveType.sineTowrads) {
+            // Ehhh this is not working correctly
+            /* Example from Sebastian --------------------
+             * 
+             * Vector3 target = targetPosition + targetDirectionFromPlayer *.7 + Vector3.up * .5f;
+             * transform.position = Vector3.SmoothDamp(transform.position,target,ref smoothV, speed);
+             * 
+             * float XOffset = Mathf.Sin(Time.time*random.xSpeed);
+             * float YOffset = (Mathf.Sin(Time.time*random.ySpeed )+1 * random.yDegree;
+             * Vector3 offset = new Vector3(offsetX,offsetY) * (1.1f-offsetPercent);
+             * Transform.Translate(deltaOffset,Space.self);
+             * 
+             */
+            rb.drag = enemy.moveSpeed * .001f;
+            float sine = Mathf.Sin(Time.time * Random.Range(1, 5)) * transform.position.z;
+            Vector3 sineDir = new Vector3(direction.x + sine, direction.y, direction.z + sine);
+            rb.AddForce(sineDir * enemy.moveSpeed);
+        }
         yield return null;
         SetMovement();
     }

@@ -10,13 +10,17 @@ public class TargetToTouch : MonoBehaviour {
     public Camera cam;
 
     private void Start() {
-        input = GameManager.Instance.InputController;
+        if (input == null) {
+            input = GameManager.Instance.InputController;
+        }
     }
     private void Update() {
-        Ray ray = cam.ScreenPointToRay(input.touchPosition);
-        RaycastHit hitInfo;
+        if (cam != null) {
+            Ray ray = cam.ScreenPointToRay(input.touchPosition);
+            RaycastHit hitInfo;
 
-        if (Physics.Raycast(ray, out hitInfo, rayDist, Ground))
-            transform.position = hitInfo.point;
+            if (Physics.Raycast(ray, out hitInfo, rayDist, Ground))
+                transform.position = hitInfo.point;
+        }
     }
 }

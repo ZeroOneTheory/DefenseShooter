@@ -7,14 +7,17 @@ public class PlayerMove : MonoBehaviour {
 
     public float rotationSpeed;
     public Transform target;
-    InputController inputController;
+    public InputController inputController;
+    
 
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
         inputController = GameManager.Instance.InputController;
+        
 	}
 	
+   
 	// Update is called once per frame
 	void Update () {
 
